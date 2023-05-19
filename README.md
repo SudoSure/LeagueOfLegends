@@ -1,13 +1,14 @@
-### League of Legends
-
-### What is the Best Champion?
+# League of Legends: What is the Best Champion?
 
 ## Introduction
 
-# Introduction and Question Identification
+### Introduction and Question Identification
+
 
 ## Cleaning and EDA
 
+
 ## Assessment of Missingness
+
 
 ## Hypothesis Testing
