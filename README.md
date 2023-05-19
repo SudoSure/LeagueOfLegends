@@ -1,6 +1,6 @@
 ### League of Legends
 
-### What is the Best Champion
+### What is the Best Champion?
 
 ## Introduction
 
