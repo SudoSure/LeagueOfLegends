@@ -18,6 +18,16 @@ This is a scatterplot of the average kills of a champion compared to its winrate
 This is a table showing the champions with the highest winrate. As we can see, Darius, Rell, Wukong, Twister Fate, and Taliyah are our highest winrate champions with at least a sufficient total amount of games played. Using domain knowledge, we know that Darius is often used as a counter pick to tank top laners and any weak early game champion. Teams probably only picked Darius knowing if the opposing team chose their top laner first. Darius's oppressive early game often dominates the opposing top laner, making them have significantly less impact in the game as whole. For Rell, she is a support that is often picked as a champion that provides engage power to the team. Rell's crowd control snf play making potential can heavily carry games. For wukong, he is a jungler strong skirmisher with a strong early and mid game that ensures the team enough early power to secure objectives and snowball the game. For Twisted Fate and Taliyah, they are midlaners with strong map presences as they have ultimate abilities that affect the whole map as well as strong crowd control spells that provide single target damage and control.
 
 ## Assessment of Missingness
-
+### NMAR Analysis
+I believe that the pentakill column would be NMAR because often most players do not get pentakills every game or ever.
+### Missingness Dependency
+(Missingness plot and interpretation)
 
 ## Hypothesis Testing
+Let's specify and generalize our question. 
+Null Hypothesis (H0): The average number of kills for top laners is the same as the average number of kills for mid laners.
+Alternative Hypothesis (H1): The average number of kills for top laners is different from the average number of kills for mid laners.
+
+(show graph)
+
+As we can see, there a significant difference in the average number of kills between top laners and mid laners.
