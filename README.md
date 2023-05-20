@@ -8,7 +8,13 @@ What is the best champion in the game? That is every gamers' first question they
 ### Data Cleaning
 In the data cleaning process, I included the columns: 'gameid', 'datacompleteness', 'position', 'champion', 'result', 'kills', 'deaths', 'assists', 'doublekills', 'triplekills', 'quadrakills', 'pentakills'. The rest of the other columns were dropped as they were not relavent to the analysis. Then, I removed the team data as I want to focus on individual player data. I also created two separate columns called 'win' and 'lose' that interprets the result column in type bool to clearly decipher if a player lost or won a particular game. Finally, I filled in NaN values of the multikill columns with 0.0 because likely if a multikill is NaN then it was not achieved and the value would be 0.
 
-| gameid                | datacompleteness   | position   | champion   |   result |   kills |   deaths |   assists |   doublekills |   triplekills |   quadrakills |   pentakills | win   | lose   |\n|:----------------------|:-------------------|:-----------|:-----------|---------:|--------:|---------:|----------:|--------------:|--------------:|--------------:|-------------:|:------|:-------|\n| ESPORTSTMNT01_2690210 | complete           | top        | Renekton   |        0 |       2 |        3 |         2 |             0 |             0 |             0 |            0 | False | True   |\n| ESPORTSTMNT01_2690210 | complete           | jng        | Xin Zhao   |        0 |       2 |        5 |         6 |             0 |             0 |             0 |            0 | False | True   |\n| ESPORTSTMNT01_2690210 | complete           | mid        | LeBlanc    |        0 |       2 |        2 |         3 |             0 |             0 |             0 |            0 | False | True   |\n| ESPORTSTMNT01_2690210 | complete           | bot        | Samira     |        0 |       2 |        4 |         2 |             0 |             0 |             0 |            0 | False | True   |\n| ESPORTSTMNT01_2690210 | complete           | sup        | Leona      |        0 |       1 |        5 |         6 |             0 |             0 |             0 |            0 | False | True   |
+| gameid                | datacompleteness   | position   | champion   |   result |   kills |   deaths |   assists |   doublekills |   triplekills |   quadrakills |   pentakills | win   | lose   |
+|:----------------------|:-------------------|:-----------|:-----------|---------:|--------:|---------:|----------:|--------------:|--------------:|--------------:|-------------:|:------|:-------|
+| ESPORTSTMNT01_2690210 | complete           | top        | Renekton   |        0 |       2 |        3 |         2 |             0 |             0 |             0 |            0 | False | True   |
+| ESPORTSTMNT01_2690210 | complete           | jng        | Xin Zhao   |        0 |       2 |        5 |         6 |             0 |             0 |             0 |            0 | False | True   |
+| ESPORTSTMNT01_2690210 | complete           | mid        | LeBlanc    |        0 |       2 |        2 |         3 |             0 |             0 |             0 |            0 | False | True   |
+| ESPORTSTMNT01_2690210 | complete           | bot        | Samira     |        0 |       2 |        4 |         2 |             0 |             0 |             0 |            0 | False | True   |
+| ESPORTSTMNT01_2690210 | complete           | sup        | Leona      |        0 |       1 |        5 |         6 |             0 |             0 |             0 |            0 | False | True   |
 
 ### Univariate Analysis
 This is a distribution of the winrates of the champions. As you can see, it is somewhat normally distributed as most champions hover around the 50% range as they should. Any champion lower than a 40% winrate or higher than a 60% would definitely need tuning from the game balancing team. (Show histogram)
@@ -18,7 +24,13 @@ This is a scatterplot of the average kills of a champion compared to its winrate
 ### Interesting Aggregates
 This is a table showing the champions with the highest winrate. As we can see, Darius, Rell, Wukong, Twister Fate, and Taliyah are our highest winrate champions with at least a sufficient total amount of games played. Using domain knowledge, we know that Darius is often used as a counter pick to tank top laners and any weak early game champion. Teams probably only picked Darius knowing if the opposing team chose their top laner first. Darius's oppressive early game often dominates the opposing top laner, making them have significantly less impact in the game as whole. For Rell, she is a support that is often picked as a champion that provides engage power to the team. Rell's crowd control and play making potential can heavily carry games. For Wukong, he is a jungler strong skirmisher with a strong early and mid game that ensures the team enough early power to secure objectives and snowball the game. For Twisted Fate and Taliyah, they are midlaners with strong map presences as they have ultimate abilities that affect the whole map as well as strong crowd control spells that provide single target damage and control.
 
-| champion     |   winrate |\n|:-------------|----------:|\n| Darius       |  0.569061 |\n| Rell         |  0.561497 |\n| Wukong       |  0.560832 |\n| Twisted Fate |  0.555126 |\n| Taliyah      |  0.552226 |
+| champion     |   winrate |
+|:-------------|----------:|
+| Darius       |  0.569061 |
+| Rell         |  0.561497 |
+| Wukong       |  0.560832 |
+| Twisted Fate |  0.555126 |
+| Taliyah      |  0.552226 |
 
 ## Assessment of Missingness
 #### NMAR Analysis
