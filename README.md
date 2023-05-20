@@ -7,7 +7,7 @@ What is the best champion in the game? That is every gamers' first question they
 ## Cleaning and EDA
 ### Data Cleaning
 In the data cleaning process, I included the columns: 'gameid', 'datacompleteness', 'position', 'champion', 'result', 'kills', 'deaths', 'assists', 'doublekills', 'triplekills', 'quadrakills', 'pentakills'. The rest of the other columns were dropped as they were not relavent to the analysis. Then, I removed the team data as I want to focus on individual player data. I also created two separate columns called 'win' and 'lose' that interprets the result column in type bool to clearly decipher if a player lost or won a particular game. Finally, I filled in NaN values of the multikill columns with 0.0 because likely if a multikill is NaN then it was not achieved and the value would be 0.
-(Show head of cleaned DF)
+<iframe src="cleaned_df.html"></iframe>
 
 ### Univariate Analysis
 This is a distribution of the winrates of the champions. As you can see, it is somewhat normally distributed as most champions hover around the 50% range as they should. Any champion lower than a 40% winrate or higher than a 60% would definitely need tuning from the game balancing team. (Show histogram)
