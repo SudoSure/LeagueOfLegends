@@ -10,12 +10,6 @@ In the data cleaning process, I included the columns: 'gameid', 'datacompletenes
 
 '| gameid                | datacompleteness   | position   | champion   |   result |   kills |   deaths |   assists |   doublekills |   triplekills |   quadrakills |   pentakills | win   | lose   |\n|:----------------------|:-------------------|:-----------|:-----------|---------:|--------:|---------:|----------:|--------------:|--------------:|--------------:|-------------:|:------|:-------|\n| ESPORTSTMNT01_2690210 | complete           | top        | Renekton   |        0 |       2 |        3 |         2 |             0 |             0 |             0 |            0 | False | True   |\n| ESPORTSTMNT01_2690210 | complete           | jng        | Xin Zhao   |        0 |       2 |        5 |         6 |             0 |             0 |             0 |            0 | False | True   |\n| ESPORTSTMNT01_2690210 | complete           | mid        | LeBlanc    |        0 |       2 |        2 |         3 |             0 |             0 |             0 |            0 | False | True   |\n| ESPORTSTMNT01_2690210 | complete           | bot        | Samira     |        0 |       2 |        4 |         2 |             0 |             0 |             0 |            0 | False | True   |\n| ESPORTSTMNT01_2690210 | complete           | sup        | Leona      |        0 |       1 |        5 |         6 |             0 |             0 |             0 |            0 | False | True   |'
 
-# Removed team matchid data to focus on individual player data
-# Change result to True and False
-# Fill the nan values in double, triple, quadra, penta kills because a nan value in this case means that that type kill
-# was not achieved in that game as they are usually rare in professional games
-# Removed
-
 ### Univariate Analysis
 This is a distribution of the winrates of the champions. As you can see, it is somewhat normally distributed as most champions hover around the 50% range as they should. Any champion lower than a 40% winrate or higher than a 60% would definitely need tuning from the game balancing team. (Show histogram)
 ### Bivariate Analysis
