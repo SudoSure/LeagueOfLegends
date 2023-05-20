@@ -6,7 +6,7 @@ What is the best champion in the game? That is every gamers' first question they
 
 ## Cleaning and EDA
 ### Data Cleaning
-In the data cleaning process, I included the columns: 'gameid','datacompleteness','position','champion','result','kills','deaths','assists','doublekills','triplekills','quadrakills','pentakills', 'dpm', 'totalgold', 'total cs', 'cspm','damagetochampions'. The rest of the other columns were dropped as they were not relavent to the analysis. Then, I removed the team data as I want to focus on individual player data. I also created two separate columns called 'win' and 'lose' that interprets the result column in type bool to clearly decipher if a player lost or won a particular game. Finally, I filled in NaN values of the multikill columns with 0.0 because likely if a multikill is NaN then it was not achieved and the value would be 0.
+In the data cleaning process, I included the columns: 'gameid', 'datacompleteness', 'position', 'champion', 'result', 'kills', 'deaths', 'assists', 'doublekills', 'triplekills', 'quadrakills', 'pentakills'. The rest of the other columns were dropped as they were not relavent to the analysis. Then, I removed the team data as I want to focus on individual player data. I also created two separate columns called 'win' and 'lose' that interprets the result column in type bool to clearly decipher if a player lost or won a particular game. Finally, I filled in NaN values of the multikill columns with 0.0 because likely if a multikill is NaN then it was not achieved and the value would be 0.
 (Show head of cleaned DF)
 
 ### Univariate Analysis
