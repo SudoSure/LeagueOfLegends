@@ -17,12 +17,12 @@ In the data cleaning process, I included the columns: 'gameid', 'datacompletenes
 | ESPORTSTMNT01_2690210 | complete           | sup        | Leona      |        0 |       1 |        5 |         6 |             0 |             0 |             0 |            0 | False | True   |
 
 ### Univariate Analysis
-<iframe src="univariate.html"></iframe>
+<iframe src="univariate.html" width=800 height=600 frameBorder=0></iframe>
 
 This is a distribution of the winrates of the champions. As you can see, it is somewhat normally distributed as most champions hover around the 50% range as they should. Any champion lower than a 40% winrate or higher than a 60% would definitely need tuning from the game balancing team.
 
 ### Bivariate Analysis
-<iframe src="bivariate.html"></iframe>
+<iframe src="bivariate.html" width=800 height=600 frameBorder=0></iframe>
 
 This is a scatterplot of the average kills of a champion compared to its winrate. As you can see, there is not much correlation between the two as if we were to theoretically fit a line through the points, then the slope would be mostly flat. This champions that get more kills do not always win more. There are plenty other factors that would affect winrate like team composition, objective control, total gold earned, team synergy, etc. This also shows that you champions with a low average kill like support champions, still have an equal impact as kill- focused champions. (Show scatterplot)
 
