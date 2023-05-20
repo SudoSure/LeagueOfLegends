@@ -41,7 +41,7 @@ This is a table showing the champions with the highest winrate. As we can see, D
 #### NMAR Analysis
 I believe that the pentakill column would be NMAR because often most players do not get pentakills every game or ever. Depending what role or what champion you play, it could be easier or much harder to obtain a pentakill in a given game.
 #### Missingness Dependency
-(<iframe src="missing.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="missing.html" width=800 height=600 frameBorder=0></iframe>
 
 ## Hypothesis Testing
 Let's specify and generalize the question. 
