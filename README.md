@@ -39,9 +39,10 @@ This is a table showing the champions with the highest winrate. As we can see, D
 
 ## Assessment of Missingness
 #### NMAR Analysis
-I believe that the pentakill column would be NMAR because often most players do not get pentakills every game or ever. Depending what role or what champion you play, it could be easier or much harder to obtain a pentakill in a given game.
+I believe that the double kill column would be NMAR because often most players do not get double kills every game or ever. Depending what role or what champion you play, it could be easier or much harder to obtain a double kill in a given game.
 #### Missingness Dependency
 <iframe src="missing.html" width=800 height=600 frameBorder=0></iframe>
+The missingness of double kills depends on the champion, whereas the missingness of the double kills does not depend on position. With information, you are welcome to play any position you want even if you want to go for double kills, but the champion you pick one affect how easy or hard it will be to get a double kill.
 
 ## Hypothesis Testing
 Let's specify and generalize the question. 
