@@ -24,10 +24,10 @@ I believe that the pentakill column would be NMAR because often most players do 
 (Missingness plot and interpretation)
 
 ## Hypothesis Testing
-Let's specify and generalize our question. 
+Let's specify and generalize the question. 
+
 Null Hypothesis (H0): The average number of kills for top laners is the same as the average number of kills for mid laners.
+
 Alternative Hypothesis (H1): The average number of kills for top laners is different from the average number of kills for mid laners.
 
-(show graph)
-
-As we can see, there a significant difference in the average number of kills between top laners and mid laners.
+As we can see, there a significant difference in the average number of kills between top laners and mid laners when hypothesis testing. If we use domain knowledge, we know that often mid lane is in the middle map, which has equal access to all of the map, which provides availability to get kills to be easier than top lane which is usually isolated from the rest of the map. Top lane also often contains scaling picks like tanks, which do not get kills or impact the game until later in the game, while mid lane is often impactful early game as they must help the jungler in secure objectives as well as roam to other lanes to secure kills and towers. They are also impactful late game with strong area of effect damage and/or crowd control which tend to secure more kills.
