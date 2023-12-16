@@ -52,3 +52,60 @@ Null Hypothesis: The average number of kills for top laners is the same as the a
 Alternative Hypothesis: The average number of kills for top laners is different from the average number of kills for mid laners.
 
 As we can see, there a significant difference in the average number of kills between top laners and mid laners when hypothesis testing. If we use domain knowledge, we know that often mid lane is in the middle map, which has equal access to all of the map, which provides availability to get kills to be easier than top lane which is usually isolated from the rest of the map. Top lane also often contains scaling picks like tanks, which do not get kills or impact the game until later in the game, while mid lane is often impactful early game as they must help the jungler in secure objectives as well as roam to other lanes to secure kills and towers. They are also impactful late game with strong area of effect damage and/or crowd control which tend to secure more kills.
+
+# League of Legends Prediction Model
+
+## Framing the Problem
+
+Prediction Problem: Predict if a team will win or lose a game based on post-game data.
+
+Type: Binary Classification
+
+Response Variable: Game result (Win/Loss)
+
+Predicting the outcome of a League of Legends game can be useful for analyzing team performance and making strategic decisions. By predicting whether a team will win or lose based on post-game data, we can gain insights into factors that contribute to a team's success.
+
+Evaluation Metric: Accuracy
+
+Accuracy is appropriate for this classification problem as it measures the overall correctness of the predictions. We want to accurately classify whether a team will win or lose a game to evaluate the model's predictive performance.
+
+
+## Baseline Model
+
+The model used is a RandomForestClassifier.
+The selected features in the model are 'firstblood' and 'firsttower'. Both of these features are nominal categorical variables. 'firstblood' indicates whether the team achieved the first kill in the game and 'firsttower' indicates whether the team destroyed the first tower.
+The OneHotEncoder transformer is used for the given categorical features. In this case, since both 'firstblood' and 'firsttower' have two categories (Yes/No or 1.0/0.0 in this case), they are one-hot encoded into two binary features each.
+The performance of the model is evaluated using accuracy. 
+
+Considering the accuracy and domain knowledge, the baseline model is pretty good as the accuracy is ~66% which is above 50% in a binary style decision metric. Knowing domain knowledge in League of Legends has some correlation to the data as knowing if a team gets the first blood often gives a player/team a massive advantage especially when gathering data from professional players who know how to utilize this advantage. First tower usually indicates a given team's tempo in the game, which often correlates to a more organized team that would likely secure objectives and win the game. However, getting a first blood and/or first tower does not always gurantee an instant win as they are other factors in the game to consider and plenty ways to comeback as a losing team hence why the accuracy is about ~66% and not any higher. First blood and first tower provides an advantage to the given team but does not always gurantee their win. Given the information, this model is fairly good in the grand scheme of things.
+
+
+## Final Model
+
+The features added to the model are 'damagetochampions' and 'kills', both related to the performance of the teams in terms of damage dealt to champions and the number of kills. These features are relevant for the prediction task because they provide insights into the teams' offensive capabilities and their ability to eliminate opponents, which can significantly impact the outcome of the game.
+Considering the data generating process, these features capture important gameplay dynamics. Teams that can deal higher damage to champions and secure more kills are generally more likely to win the game. By including these features in the model, we are incorporating valuable information that can improve the model's ability to distinguish between winning and losing teams.
+
+The modeling algorithm chosen for this task is the RandomForestClassifier, which is an ensemble of decision trees. Random forests are well-suited for this prediction task because they can handle both numerical and categorical features, capture complex interactions between variables, and provide robust predictions by averaging the predictions of multiple trees.
+Hyperparameters were tuned using grid search with cross-validation (5-fold). The hyperparameters that ended up performing the best were the middle 'n_estimators' (number of trees in the forest) and 'max_depth' (maximum depth of the trees). The grid search explored different combinations of these hyperparameters and selected the best combination based on the performance metric (accuracy).
+The final model's performance is evaluated using accuracy. By comparing the performance of the final model with the baseline model, we can assess whether the additional features and hyperparameter tuning have led to an improvement in predictive performance.
+
+Overall, the final model's performance is an improvement over the baseline model due to the inclusion of additional informative features and the optimization of hyperparameters. The feature transformations and encoding techniques allow the model to capture the relationships between the features and the target variable more effectively, while the hyperparameter tuning helps to find the optimal configuration of the model, leading to improved predictive accuracy.
+
+
+## Fairness Analysis
+
+For the permutation test, I will choose the following groups:
+
+Group X: Blue team
+
+Group Y: Red team
+
+Null Hypothesis: The model is fair. The precision for the blue team and red team is roughly the same, and any differences are due to random chance.
+
+Alternative Hypothesis: The model is unfair. The precision for the blue team is lower than the precision for the red team.
+
+The evaluation metric I will use is precision. I chose precision because it provides insight into the model's ability to correctly identify the positive class (in this case, the blue team winning). The test statistic used is the difference in precision between the blue team and the red team. We will perform a two-sided test with a significance level of 0.05.
+Based on the calculated p-value, we can draw conclusions about the fairness of the model's precision for the blue team compared to the red team. If the p-value is less than the significance level (0.05), we can reject the null hypothesis and conclude that the model's precision is significantly different between the two groups. Conversely, if the p-value is greater than or equal to the significance level, we fail to reject the null hypothesis and conclude that there is no significant difference in precision between the blue team and the red team. In this case, it looks like we fail to reject the null hypothesis since p-value is greater than the given threshold meaning the precision for the blue team and red team is roughly the same, and any differences are due to random chance.
+
+
+
